@@ -3,7 +3,7 @@ const user = require( "../controllers/user" );
 const express = require( "express" );
 const router = express.Router();
 
-router.get("/", middlewares.getterPopulate , user.get);
+router.post("/" , user.get);
 
 router.get("/rank", middlewares.getterPagination, middlewares.getterPopulate, user.getRank);
 

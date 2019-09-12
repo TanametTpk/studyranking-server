@@ -5,11 +5,14 @@ exports.get = async (req , res) => {
 
 	try {
 
-		userTarget = await user.findManyAndPopulate(req.query , req._populate);
+		let userTarget = await user.find({name:req.body.name})
 
+		if (userTarget) userTarget = await user.create(req.body);
 		res.success(userTarget);
 
 	} catch (err){
+		console.log(err);
+		
 		res.preconditionFailed();
 	}
 
