@@ -1,6 +1,4 @@
 const User = require( "mongoose" ).model( "user" );
-const jwt = require('jsonwebtoken');
-const jwtConfig = require('../../config/env/awt.config');
 
 const find = (query , populate) => {
 

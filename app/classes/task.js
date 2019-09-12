@@ -1,6 +1,4 @@
 const Tank = require( "mongoose" ).model( "task" );
-const jwt = require('jsonwebtoken');
-const jwtConfig = require('../../config/env/awt.config');
 
 const find = (query , populate) => {
 
