@@ -1,10 +1,10 @@
 const user = require( "./user" );
-const tank = require( "./tank" );
+const task = require( "./task" );
 
 
 module.exports = {
 	user,
-	tank,
+	task,
 
 }
 

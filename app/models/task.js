@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = require("mongoose").Schema;
 var Encoder = require("./libs/Encoder")
 
-var tankSchema = Schema({
+var taskSchema = Schema({
 
 	description : { type:String, required : true},
 	time : { type:Number, required : true},
@@ -10,4 +10,4 @@ var tankSchema = Schema({
 
 })
 
-module.exports = mongoose.model('tank', tankSchema)
+module.exports = mongoose.model('task', taskSchema)

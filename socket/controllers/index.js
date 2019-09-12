@@ -1,9 +1,9 @@
 const room = require("./room");
 const user = require("./user");
-const tank = require("./tank");
+const task = require("./task");
 
 module.exports = {
 	room,
 	user,
-	tank,
+	task,
 }

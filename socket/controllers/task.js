@@ -1,8 +1,8 @@
-const Tank = require('../../app/classes/tank');
+const Tank = require('../../app/classes/task');
 
 module.exports = (socket) => {
 
-	socket.on('create-tank' , async(data) => {
+	socket.on('create-task' , async(data) => {
 
 		try{
 
@@ -18,7 +18,7 @@ module.exports = (socket) => {
 
 	})
 
-	socket.on('update-tank' , async(data) => {
+	socket.on('update-task' , async(data) => {
 
 		try{
 
@@ -35,7 +35,7 @@ module.exports = (socket) => {
 
 	})
 
-	socket.on('delete-tank' , async(data) => {
+	socket.on('delete-task' , async(data) => {
 
 		try{
 

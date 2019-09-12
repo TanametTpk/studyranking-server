@@ -1,4 +1,4 @@
-const Tank = require( "mongoose" ).model( "tank" );
+const Tank = require( "mongoose" ).model( "task" );
 const jwt = require('jsonwebtoken');
 const jwtConfig = require('../../config/env/awt.config');
 
@@ -25,32 +25,32 @@ const findManyAndPopulate = (query , populate , skip , limit) => {
 
 const create = (data) => {
 
-	const tank = new Tank(data);
+	const task = new Tank(data);
 
-	return tank.save();
+	return task.save();
 
 };
 
-const update = ( tank, data ) => {
+const update = ( task, data ) => {
 
 	const { description , time , user } = data;
-	const currentTank = tank;
+	const currentTank = task;
 
 	if (description) currentTank.description = description;
 	if (time) currentTank.time = time;
 	if (user) currentTank.user = user;
 
 
-	return tank.save();
+	return task.save();
 
 };
 
-const deleteObj = ( tank ) => tank.remove();
+const deleteObj = ( task ) => task.remove();
 
-const wrap = (tank) => {
+const wrap = (task) => {
 
-	if (tank === null) return {};
-	const { _id , description , time , user } = tank;
+	if (task === null) return {};
+	const { _id , description , time , user } = task;
 
 	return { _id , description , time , user };
 

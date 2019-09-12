@@ -9,7 +9,7 @@ module.exports = function(server){
 
 		// setup controller
 		controller.user(socket)
-		controller.tank(socket)
+		controller.task(socket)
 
 		socket.on('disconnect' , function(){
 			// user disconnected
