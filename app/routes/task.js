@@ -11,9 +11,9 @@ router.get("/:objectId", middlewares.getterObjectId, middlewares.getterPopulate,
 
 router.post("/", task.create);
 
-router.post("/:objectId", middlewares.getterObjectId, task.update);
+router.put("/:objectId", middlewares.getterObjectId, task.update);
 
-router.post("/:objectId/del", middlewares.getterObjectId, task.delete);
+router.delete("/:objectId", middlewares.getterObjectId, task.delete);
 
 
 

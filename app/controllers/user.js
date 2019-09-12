@@ -1,4 +1,5 @@
 const user = require('../classes/user');
+const task = require('../classes/task');
 
 exports.get = async (req , res) => {
 
@@ -84,5 +85,37 @@ exports.delete = async (req , res) => {
 
 };
 
+exports.getRank = async (req , res) => {
 
+	try {
 
+		let users = await user.find();
+		let totalTime = await task.getTotalTime();
+		let userMap = {}
+
+		totalTime.map((t) => {
+
+			// get user id
+			let userID = t.user
+
+			if (!userMap[userID]) userMap[userID] = 0
+			userMap[userID] += t.time
+
+		})
+
+		users = users.map((u) => {
+
+			return {
+				user:u,
+				time: userMap[u._id] ? userMap[u._id] : 0
+			}
+
+		})
+
+		res.success(users);
+
+	} catch (err){
+			res.preconditionFailed();
+	}
+
+};

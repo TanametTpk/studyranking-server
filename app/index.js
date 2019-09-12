@@ -4,8 +4,8 @@ const user = require( "./routes/user" );
 const task = require( "./routes/task" );
 
 
-router.use("/user", user);
-router.use("/task", task);
+router.use("/users", user);
+router.use("/tasks", task);
 
 
 module.exports = router;

@@ -6,7 +6,7 @@ var taskSchema = Schema({
 
 	description : { type:String, required : true},
 	time : { type:Number, required : true},
-	user : { type:mongoose.Schema.Types.ObjectId , ref: 'time', required : true},
+	user : { type:mongoose.Schema.Types.ObjectId , ref: 'user', required : true},
 
 })
 
